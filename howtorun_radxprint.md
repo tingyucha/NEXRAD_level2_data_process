@@ -22,15 +22,15 @@ To check all command line options for RadxPrint, type the following command into
 ```
 
 
-⋅⋅If the user prefers to store the printed information in a .txt file, type:
+If the user prefers to store the printed information in a .txt file, type:
 
 ```terminal
 /path/to/Radx/apps/RadxPrint -f ./output/20161006/cfrad.20161006_190750.006_to_20161006_191335.539_KAMX_Surveillance_SUR.nc > file_name.txt
 ```
 
-⋅⋅In addition, RadxPrint also allows you to print out a specific field.
+In addition, RadxPrint also allows you to print out a specific field.
 
-⋅⋅For example, print the information of REF field into a .txt file:
+For example, print the information of REF field into a .txt file:
 ```terminal
 /path/to/Radx/apps/RadxPrint -f ./output/20161006/cfrad.20161006_190750.006_to_20161006_191335.539_KAMX_Surveillance_SUR.nc -field REF > file_name.txt
 ```
