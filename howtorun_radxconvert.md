@@ -15,9 +15,9 @@ RadxConvert allows you to convert data stored in one format to a different forma
 - LEOSPHERE LIDAR, ASCII format	
 - EEC - now supports CfRadial	
 
-RadxConvert command can be used either specifying the file format with parameter file or specifying the format in command line.
+### RadxConvert command can be used either specifying the file format with parameter file or specifying the format in command line.
 
-## Creat run-time parameter file 
+1. Creat run-time parameter file 
 
 ```terminal
 /path/to/Radx/apps/RadxConvert -print_params > RadxConvert.params
@@ -29,13 +29,13 @@ For example:
 
 Open RadxConvert.params in the terminal and find the line with "output_format"
 
-1. Convert Level II data to cfradial format
+- Convert Level II data to cfradial format
 
 ```terminal
 output_format = OUTPUT_FORMAT_CFRADIAL
 ```
 
-2. Convert Level II data to sweep format
+- Convert Level II data to sweep format
 
 ```terminal
 output_format= OUTPUT_FORMAT_DORADE
@@ -47,17 +47,17 @@ Once the parameter file is complete, use the following command to run the applic
 /path/to/Radx/apps/RadxConvert -f Level2_KAMX_20161006_1906.ar2v -params RadxConvert.params
 ```
 
-## Convert file format in command line (by default)
+2. Convert file format in command line (by default)
 
 If the user don't have specific requirement to the conversion setting, you can use the following command to obtain the file as well: 
 
-1. Convert Level II data to cfradial format
+- Convert Level II data to cfradial format
 
 ```terminal
 /path/to/Radx/apps/RadxConvert -cfradial -f Level2_KAMX_20161006_1906.ar2v
 ```
 
-2. Convert Level II data to sweep format
+- Convert Level II data to sweep format
 
 ```terminal
 /path/to/Radx/apps/RadxConvert -dorade -f Level2_KAMX_20161006_1906.ar2v
