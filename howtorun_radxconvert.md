@@ -15,7 +15,7 @@ RadxConvert allows you to convert data stored in one format to a different forma
 - LEOSPHERE LIDAR, ASCII format	
 - EEC - now supports CfRadial	
 
-### RadxConvert command can be used either specifying the file format with parameter file or specifying the format in command line.
+### RadxConvert command can be used either specifying the file format in parameter file or specifying the format in command line.
 
 1. Creat run-time parameter file 
 
