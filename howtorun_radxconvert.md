@@ -19,9 +19,9 @@ EEC - now supports CfRadial	| Yes | N/A
 
 | Format        | Read Access   | Write Access |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| CfRadial - NCAR/EOL/UNIDATA	| Yes | Yes |
+| DORADE - NCAR/EOL	| Yes | Yes |
+| UF - Universal Format	| Yes | Yes |
 
 ## Running RadxConvert
 
