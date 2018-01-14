@@ -17,7 +17,7 @@ HRD - HRD NOAA	| Yes | No
 LEOSPHERE LIDAR, ASCII format	| Yes | No
 EEC - now supports CfRadial	| Yes | N/A
 
-| Tables        | Are           | Cool  |
+| Format        | Read Access   | Write Access |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
