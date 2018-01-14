@@ -1,19 +1,21 @@
 # RadxConvert
 
 RadxConvert allows you to convert data stored in one format to a different format. It can support in the following formats:
-- CfRadial - NCAR/EOL/UNIDATA	
-- DORADE - NCAR/EOL	
-- UF - Universal Format	
-- Foray-1 netCDF - NCAR/EOL	
-- DOE ARM netcdf - precedes CfRadial	
-- MDV radial - NCAR/RAL	
-- NEXRAD msg31 level 2 archive	
-- NEXRAD msg1 level 2 archive	
-- SIGMET - raw format (Vaisala)	
-- RAPIC - BOM Australia	
-- HRD - HRD NOAA	
-- LEOSPHERE LIDAR, ASCII format	
-- EEC - now supports CfRadial	
+Format | Read Access | Write Access
+--- | --- | ---
+CfRadial - NCAR/EOL/UNIDATA	| Yes | Yes
+DORADE - NCAR/EOL	| Yes | Yes
+UF - Universal Format	| Yes | Yes
+Foray-1 netCDF - NCAR/EOL	| Yes | Yes
+DOE ARM netcdf - precedes CfRadial	| Yes | No
+MDV radial - NCAR/RAL	| Yes | Yes
+NEXRAD msg31 level 2 archive	| Yes | Yes
+NEXRAD msg1 level 2 archive	| Yes | No
+SIGMET - raw format (Vaisala)	| Yes | No
+RAPIC - BOM Australia	| Yes | No
+HRD - HRD NOAA	| Yes | No
+LEOSPHERE LIDAR, ASCII format	| Yes | No
+EEC - now supports CfRadial	| Yes | N/A
 
 ## Running RadxConvert
 
