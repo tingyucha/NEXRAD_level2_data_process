@@ -2,7 +2,7 @@
 
 RadxConvert allows you to convert data stored in one format to a different format. It can support in the following formats:
 | Format | Read Access | Write Access |
-| ------ | ----------- | ------------ |
+| ------ |:-----------:| ------------:|
 CfRadial - NCAR/EOL/UNIDATA	| Yes | Yes
 DORADE - NCAR/EOL	| Yes | Yes
 UF - Universal Format	| Yes | Yes
