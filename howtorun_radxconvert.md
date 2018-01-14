@@ -17,6 +17,12 @@ HRD - HRD NOAA	| Yes | No
 LEOSPHERE LIDAR, ASCII format	| Yes | No
 EEC - now supports CfRadial	| Yes | N/A
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 ## Running RadxConvert
 
 To check all command line options for RadxConvert, type the following command into a terminal.
