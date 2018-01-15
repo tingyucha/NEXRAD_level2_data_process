@@ -40,7 +40,7 @@ Specific parameters to edit:
 
 
 ```terminal
-/path/to/Radx/apps/Radx2Grid -f cfradial_file -params - parameter.txt
+/path/to/Radx/apps/Radx2Grid -f cfradial_file -params parameter_file.txt
 ```
 
 
