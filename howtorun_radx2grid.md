@@ -39,7 +39,9 @@ Specific parameters to edit:
 - ncf_source: source string for netCDF file.
 
 
-
+```terminal
+/path/to/Radx/apps/Radx2Grid -f cfradial_file -params - parameter.txt
+```
 
 
 
