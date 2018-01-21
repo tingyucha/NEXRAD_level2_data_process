@@ -2,6 +2,10 @@
 
 RadxPrint allows you to print data header from any of the files supported by Radx, such as cfradial and sweep format.
 
+## Prerequisite
+- RadxConvert output files
+
+
 ## Running RadxPrint
 
 To check all command line options for RadxPrint, type the following command into a terminal：
