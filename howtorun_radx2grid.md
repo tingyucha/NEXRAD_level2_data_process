@@ -13,7 +13,7 @@ The following itema are required:
 - RadxConvert output files (cfradial)
 
 ## Parameter file
-The parameter file will need to be updated to include the location of Radx2Grid files, in addition to data quality thresholds set by the user.
+The parameter file will need to be updated to include the location of Radx2Grid files, in addition to data interpolation method set by the user.
 
 ### Ensure parameter file is up to date
 To obtain the default parameter file, use the following command:
