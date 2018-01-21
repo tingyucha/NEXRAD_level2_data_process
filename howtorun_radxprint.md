@@ -22,7 +22,7 @@ To check all command line options for RadxPrint, type the following command into
 
 - To print the data with sweep format in a generic form, type:
 ```terminal
-/path/to/Radx/apps/RadxPrint -ag -f sweep_file
+/path/to/Radx/apps/RadxPrint -f sweep_file
 ```
 
 
@@ -32,7 +32,7 @@ If the user prefers to store the printed information in a .txt file, type:
 /path/to/Radx/apps/RadxPrint -f cfradial_file > file_name.txt
 ```
 
-In addition, RadxPrint also allows you to print out a specific field. For example, print the information of REF field into a .txt file:
+In addition, RadxPrint also allows you to print out a specific field. For example, print the information of REF field onto a .txt file:
 ```terminal
 /path/to/Radx/apps/RadxPrint -f cfradial file -field REF > file_name.txt
 ```
