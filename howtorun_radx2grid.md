@@ -8,25 +8,28 @@ The following regular grids are supported:
 - PPI grid in (EL, Y, Z) - performs Cartesian transformation on each elevation angle separately
 - Polar grid, regular in (EL, AZ, RANGE)
 
-## Running Radx2Grid
+## Prerequesites
+The following itema are required:
+- RadxConvert output files (cfradial)
 
-To check all command line options for RadxConvert, type the following command into a terminal.
+## Parameter file
+The parameter file will need to be updated to include the location of Radx2Grid files, in addition to data quality thresholds set by the user.
+
+### Ensure parameter file is up to date
+To obtain the default parameter file, use the following command:
 
 ```terminal
-/path/to/Radx/apps/Radx2Grid -h
+/path/to/Radx/apps/Radx2Grid -print_params > param_file_name
 ```
-1. Creat run-time parameter file 
 
+If you already have a parameter file and simply want to check for (and add) updated parameters while retaining current parameters, use the following command:
 
 ```terminal
-/path/to/Radx/apps/Radx2Grid -print_params > Radx2Grid.params
+/path/to/Radx/apps/Radx2Grid -params orig_param_file_name -print_params > new_param_file_name
 ```
 
-The user can edit specific setting in the parameter file (etc. grid spacing, interpolation mode, filename).
-
+### Specific parameters to edit
 Caution: this is not an exhaustive list. We urge each user to read through the entire parameter file carefully.
-
-Specific parameters to edit:
 
 - start_time, end_time: set the start time and end time for ARCHIVE mode analysis. The format should be 'yyyy mm dd hh mm ss'.
 - input_dir: input directory for searching for files. Files will be searched for in this directory.
@@ -39,9 +42,17 @@ Specific parameters to edit:
 - ncf_source: source string for netCDF file.
 
 
+## Running Radx2Grid
+To check all command line options for Radx2Grid, including debugging options and file paths, type the following command into a terminal.
+
 ```terminal
-/path/to/Radx/apps/Radx2Grid -f cfradial_file -params parameter_file.txt
+/path/to/Radx/apps/Radx2Grid -h
 ```
 
+Once your parameter file is complete, specify the location of cfradial files to run the application:
+
+```terminal
+/path/to/Radx/apps/Radx2Grid -f cfradial_file -params param_file_name
+```
 
 
