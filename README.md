@@ -7,7 +7,8 @@ The following data and programs will be required.
 
 - NEXRAD data
 - RadxConvert
-- Xquartz (for radar displaying)
-- Soloii (for radar editing)
 - RadxPrint
 - Radx2Grid
+
+- Xquartz (optional, for radar displaying)
+- Soloii (optional, for radar editing)
