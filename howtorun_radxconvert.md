@@ -55,7 +55,7 @@ output_format= OUTPUT_FORMAT_DORADE
 Once the parameter file is complete, use the following command to run the application:
 
 ```terminal
-/path/to/Radx/apps/RadxConvert -f Level2_KAMX_20161006_1906.ar2v -params RadxConvert.params
+/path/to/Radx/apps/RadxConvert -f Level_II_file -params RadxConvert.params
 ```
 
 2. Convert file format in command line (by default)
@@ -65,13 +65,13 @@ If the user don't have specific requirement to the conversion setting, you can u
 - Convert Level II data to cfradial format
 
 ```terminal
-/path/to/Radx/apps/RadxConvert -cfradial -f Level2_KAMX_20161006_1906.ar2v
+/path/to/Radx/apps/RadxConvert -cfradial -f Level_II_file
 ```
 
 - Convert Level II data to sweep format
 
 ```terminal
-/path/to/Radx/apps/RadxConvert -dorade -f Level2_KAMX_20161006_1906.ar2v
+/path/to/Radx/apps/RadxConvert -dorade -f Level_II_file
 ```
 
 
