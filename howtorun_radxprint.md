@@ -13,24 +13,24 @@ To check all command line options for RadxPrint, type the following command into
 - To print the data with cfradial format in a generic form, type:
 
 ```terminal
-/path/to/Radx/apps/RadxPrint -f ./output/20161006/cfrad.20161006_190750.006_to_20161006_191335.539_KAMX_Surveillance_SUR.nc
+/path/to/Radx/apps/RadxPrint -f cfradial_file
 ```
 
 - To print the data with sweep format in a generic form, type:
 ```terminal
-/path/to/Radx/apps/RadxPrint -ag -f ./output/20161006/*.swp 
+/path/to/Radx/apps/RadxPrint -ag -f sweep_file
 ```
 
 
 If the user prefers to store the printed information in a .txt file, type:
 
 ```terminal
-/path/to/Radx/apps/RadxPrint -f ./output/20161006/cfrad.20161006_190750.006_to_20161006_191335.539_KAMX_Surveillance_SUR.nc > file_name.txt
+/path/to/Radx/apps/RadxPrint -f cfradial_file > file_name.txt
 ```
 
 In addition, RadxPrint also allows you to print out a specific field. For example, print the information of REF field into a .txt file:
 ```terminal
-/path/to/Radx/apps/RadxPrint -f ./output/20161006/cfrad.20161006_190750.006_to_20161006_191335.539_KAMX_Surveillance_SUR.nc -field REF > file_name.txt
+/path/to/Radx/apps/RadxPrint -f cfradial file -field REF > file_name.txt
 ```
 
 
