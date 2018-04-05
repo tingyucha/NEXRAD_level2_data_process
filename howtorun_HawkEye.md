@@ -37,7 +37,7 @@ To check all command line options for HawkEye, type the following command into a
 
 Once your parameter file is complete, specify the location of cfradial files to run the application:
 ```terminal
-/path/to/Radx/apps/Radx2Grid -params param_file_name -f /path/to/cfradial_files 
+/path/to/HawkEye -params param_file_name -f /path/to/cfradial_files 
 ```
 
 
