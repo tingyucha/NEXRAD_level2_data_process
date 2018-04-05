@@ -9,7 +9,7 @@ The following regular grids are supported:
 - Polar grid, regular in (EL, AZ, RANGE)
 
 ## Prerequesites
-The following itema are required:
+The following item are required:
 - RadxConvert output files (cfradial)
 
 ## Parameter file
