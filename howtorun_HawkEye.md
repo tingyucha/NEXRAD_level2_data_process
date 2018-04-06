@@ -20,7 +20,7 @@ To obtain the default parameter file, use the following command:
 If you already have a parameter file and simply want to check for (and add) updated parameters while retaining current parameters, use the following command:
 
 ```terminal
-/path/to/Radx/apps/Radx2Grid -params orig_param_file_name -print_params > new_param_file_name
+/path/to/HawkEye -params orig_param_file_name -print_params > new_param_file_name
 ```
 
 ### Specific parameters to edit
