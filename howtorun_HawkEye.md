@@ -59,3 +59,5 @@ In this case, since we are searching by time, you are required to have a day dir
 
 A window will pop up similar as the following image:
 ![HawkEye Display](https://github.com/tingyucha/NEXRAD_level2_data_process/blob/master/HawkEye_display.png)
+
+The general information of the file would be displayed on the first column of window, the field selection is on the second column, and the elevation angle selection is on the third column.
