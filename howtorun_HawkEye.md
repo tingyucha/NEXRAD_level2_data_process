@@ -56,3 +56,6 @@ In this case, since we are searching by time, you are required to have a day dir
 ```terminal
 /scr/rain1/rsfdata/projects/pecan/cfradial/kddc/moments/20150626/
 ```
+
+A window will pop up similar as the following image:
+![HawkEye Display](https://github.com/tingyucha/NEXRAD_level2_data_process/blob/master/HawkEye_display.png)
