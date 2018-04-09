@@ -48,13 +48,13 @@ One thing worth noticing is that it's not necessarily to create a parameter file
 
 If the user store the data under the day directory in the path (You can obtain the default directory setting by performing RadxConvert), the user can specify specific time span to display:
 ```terminal
-/path/to/HawkEye -archive_url /scr/rain1/rsfdata/projects/pecan/cfradial/kddc/moments -start_time "2015 06 26 00 00 00" -time_span 7200
+/path/to/HawkEye -archive_url /path/to/cfradial_files/ -start_time "2015 06 26 00 00 00" -time_span 7200
 ```
 This command would start it up to look at the specified data location, from the specified start time, for a time span of 2 hours.
 
 In this case, since we are searching by time, you are required to have a day directory in the path, so that actual data would be in:
 ```terminal
-/scr/rain1/rsfdata/projects/pecan/cfradial/kddc/moments/20150626/
+/path/to/cfradial_files/20150626/
 ```
 
 A window will pop up similar as the following image:
