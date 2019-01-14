@@ -38,7 +38,7 @@ To control FRACTL's operation, there are several key parameters to be modified i
 
 - minDbz: any values below the minimum reflectivity will be tossed out.
 - minNcp: any values below the minimum NCP will be tossed out. Note that both NEXRAD WSR88D and NOAA P-3 tail radars do not have this variable currently, so the value of minNcp doesn't have any impact on the analysis.
-- testMode: set the wind synthesis mode. There are six different modes that you can choose.
+- testMode: set the wind synthesis mode. There are six different modes that you can choose. (not sure)
 - zGrid: specify vertical grid spacing "incr" or "min, max, incr" which represents the lowest level, the highest level, and constant spacing of the vertical level respectively.
 - yGrid: similar as zGrid. It specifies the grid parameters in y.
 - xGrid: similar as zGrid. It specifies the grid parameters in x.
