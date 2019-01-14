@@ -10,7 +10,7 @@ The main features of using FRACTL are:
 - Nearest neighbor algorithm adds Doppler gates directly to matrix solver at each grid point, no interpolation or averaging of velocity required
 - Solve normal equations using Singular Value Decomposition (preferred) or Cramer’s method
 - Subset of CEDRIC diagnostics implemented, more on the way
-- <5 minutes for dual-Doppler (~3M gates)
+- It takes less than 5 minutes for dual-Doppler synthesis(~3M gates)
 
 To check all command line options for FRACTL, including debugging options and file paths, the typical '-h' flag can be invoked:
 
@@ -45,7 +45,7 @@ To control FRACTL's operation, there are several key parameters to be modified i
 - gridType: mesh is for stand-alone analysis, while mish is as a background field for SAMURAI input.
 - projLat0: the latitude of the reference point (0,0).
 - projLon0: the longitude of the reference point (0,0).
-- numNbrMax: the nearest number of points for the synthesis.
+- numNbrMax: the maximum points for the nearest neighbor algorithm to consider at each grid point.
 - inDir: input directory for searching for files. Files will be searched for in this directory.
 - fileRegex: regular expression to select files in inDir. If input file format is CfRadial (DORADE), specify it as "^cfrad (^swp)".
 - outNc: specify the name of the output netCDF file.
