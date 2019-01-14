@@ -10,7 +10,8 @@ The main features of using FRACTL are:
 - Nearest neighbor algorithm adds Doppler gates directly to matrix solver at each grid point, no interpolation or averaging of velocity required
 - Solve normal equations using Singular Value Decomposition (preferred) or Cramer’s method
 - Subset of CEDRIC diagnostics implemented, more on the way
-- It takes less than 5 minutes for dual-Doppler synthesis(~3M gates)
+- Fast computation. It takes less than 5 minutes for dual-Doppler synthesis (~3M gates)
+- Doppler data only
 
 To check all command line options for FRACTL, including debugging options and file paths, the typical '-h' flag can be invoked:
 
