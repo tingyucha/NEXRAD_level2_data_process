@@ -49,7 +49,8 @@ To control FRACTL's operation, there are several key parameters to be modified i
 - numNbrMax: the maximum points for the nearest neighbor algorithm to consider at each grid point.
 - inDir: input directory for searching for files. Files will be searched for in this directory.
 - fileRegex: regular expression to select files in inDir. If input file format is CfRadial (DORADE), specify it as "^cfrad (^swp)".
-- outNc: specify the name of the output netCDF file.
+- outTxt: specify the directory of a output summary file which contains verification of grid results.
+- outNc: specify the directory of a output netCDF file which is the result of the analysis.
 - radialName: specify the variable name of radial velocity.
 - dbzName: specify the variable name of reflectivity.
 - ncpName: specify the variable name of NCP. If there is no NCP variable, you can specify any other variable to perform the QC. This variable corresponds to minNcp for the threshold.
