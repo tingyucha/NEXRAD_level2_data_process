@@ -38,12 +38,12 @@ lrose -- fractl -params fractl.params
 To control FRACTL's operation, there are several key parameters to be modified in order to obtain the desired output. 
 
 - minDbz: any values below the minimum reflectivity will be tossed out.
-- minNcp: any values below the minimum NCP will be tossed out. Note that both NEXRAD WSR88D and NOAA P-3 tail radars do not have this variable currently, so the value of minNcp doesn't have any impact on the analysis.
-- testMode: set the wind synthesis mode. There are six different modes that you can choose. (not sure)
+- minNcp: any values below the minimum NCP will be tossed out. Note that both NEXRAD WSR88D and NOAA P-3 tail radars do not have this variable currently, so the NCP variable can be replaced by any other variables to perform the simple quality control (QC). Both minDbz and minNcp are designed for the QC of a real-time analysis. 
+- testMode: the default test mode is MODE_ZETA. The testMode option is designed for the developers to test and debug.
 - zGrid: specify vertical grid spacing "incr" or "min, max, incr" which represents the lowest level, the highest level, and constant spacing of the vertical level respectively.
 - yGrid: similar as zGrid. It specifies the grid parameters in y.
 - xGrid: similar as zGrid. It specifies the grid parameters in x.
-- gridType: mesh is for stand-alone analysis, while mish is as a background field for SAMURAI input.
+- gridType: mesh is for stand-alone analysis, while mish is as a background field for SAMURAI input. For the current release, we recommend the users to use mesh for the analysis. The mish gridType is experimental and still under development.
 - projLat0: the latitude of the reference point (0,0).
 - projLon0: the longitude of the reference point (0,0).
 - numNbrMax: the maximum points for the nearest neighbor algorithm to consider at each grid point.
@@ -52,7 +52,7 @@ To control FRACTL's operation, there are several key parameters to be modified i
 - outNc: specify the name of the output netCDF file.
 - radialName: specify the variable name of radial velocity.
 - dbzName: specify the variable name of reflectivity.
-- ncpName: specify the variable name of NCP.
+- ncpName: specify the variable name of NCP. If there is no NCP variable, you can specify any other variable to perform the QC. This variable corresponds to minNcp for the threshold.
 - uvInterp: set the wind interpolation method for u and v. The specified interpolation method will be applied before calculating the vertical velocity.
 
 
