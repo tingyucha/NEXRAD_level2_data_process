@@ -54,6 +54,6 @@ To control FRACTL's operation, there are several key parameters to be modified i
 - radialName: specify the variable name of radial velocity.
 - dbzName: specify the variable name of reflectivity.
 - ncpName: specify the variable name of NCP. If there is no NCP variable, you can specify any other variable to perform the QC. This variable corresponds to minNcp for the threshold.
-- uvInterp: set the wind interpolation method for u and v. The specified interpolation method will be applied before calculating the vertical velocity.
+- uvInterp: set the wind interpolation method for u and v. The specified interpolation method will be applied before calculating the vertical velocity. The default mode is INTERP_NONE. 
 
 
