@@ -15,7 +15,7 @@ Click "File", and open the configured xml file. Then, the user can initiate the 
 
 3. After VORTRAC finishes all the analysis, the program will generate four files: \\
 
-- `TC_name`_`Radar_name`_`Year_of_the_TC`_coefficientlist.csv
+- *TC_name*_*Radar_name*_*Year_of_the_TC*_coefficientlist.csv
 - `TC_name`_`Radar_name`_`Year_of_the_TC`_simplexlist.xml
 - `TC_name`_`Radar_name`_`Year_of_the_TC`_vortexlist.xml
 - VORTRAC_status_`The_time_of_analysis`.log
