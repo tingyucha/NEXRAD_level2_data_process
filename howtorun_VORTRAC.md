@@ -28,3 +28,15 @@ Click "File", and open the configured xml file. Then, the user can initiate the 
  -o output.nc
  ```
  
+\<vortex\> \<id\>14L\</id\> \<mode\>manual\</mode\>
+\<level2url\>http://motherlode.ucar.edu/\</level2url\>
+\<level3url\>http://motherlode.ucar.edu/\</level3url\>
+\<atcfurl\>ftp://ftp.nhc.noaa.gov/\</atcfurl\> \<name\>MICHAEL\</name\>
+\<lat\>28.4\</lat\> \<lon\>-86.45\</lon\>
+\<direction\>12.53\</direction\> \<speed\>9.46\</speed\>
+\<rmw\>25\</rmw\> \<obsdate\>2018-10-10\</obsdate\>
+\<obstime\>08:00:00\</obstime\>
+\<dir\>/bell-scratch/tcha/vortrac/Michael\</dir\>
+\<centers\>/bell-scratch/tcha/vortrac/Michael/test\_center\_GVTD\_HRD.csv\</centers\>
+\</vortex\>
+
