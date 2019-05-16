@@ -4,7 +4,7 @@ The Vortex Objective Radar Tracking and Circulation software is a collection of 
 
 ## Configuration
 
-### <vortex>
+### vortex
 XML Label:		**name** (default: New Hurricane) 
 
 - Input: 		Vortex Name 
@@ -108,8 +108,8 @@ XML Label:		**endtime** (default: current time UTC, format: HH:MM:SS)
 
 XML Label:		**dir** (default: default)
 - Input: 		CAPPI Output Directory
-Range: 		Any directory where the user has read and write permission
-Description:		This directory will be used to store CAPPI output files in the .asi format.  More information on the .asi format can be found in Sec 1A.  When the xml parameter dir is set to 'default' this directory will default to subdirectory of the working directory selected in the VORTEX CONFIGURATION PANEL.  If such a subdirectory does not exist, one will be created.  The user can also choose to adjust this directory independent of the main working directory.
+- Range: 		Any directory where the user has read and write permission
+- Description:		This directory will be used to store CAPPI output files in the .asi format.  More information on the .asi format can be found in Sec 1A.  When the xml parameter dir is set to 'default' this directory will default to subdirectory of the working directory selected in the VORTEX CONFIGURATION PANEL.  If such a subdirectory does not exist, one will be created.  The user can also choose to adjust this directory independent of the main working directory.
 
 XML Label:		**xdim** (default: 150)
 - Input: 		Grid Dimension in X Direction 
@@ -230,6 +230,117 @@ XML Label:		**maxdatagap** (default: 0 deg)
 - Range: 		[0, 359] deg
 - Description:		These parameters control how much data can be missing within a ring of analysis at each wave number.  The Maximum Wave Number controls the order of the Fourier fit used to calculate the winds at each ring.  The SIMPLEX CONFIGURATION PANEL will hold multiple Wave # boxes corresponding to the value assigned maxwavenum. The maximum data gap for each wave number should be assigned based on an understanding of how missing data affects the quality of the fit.  The defaults should work well form most cases.
 
+### choosecenter
+
+XML Label:		**dir** (default: 'default')	
+- Input: 		Choosecenter Output Directory
+- Description:		This parameter designates a directory where the user has read and write permissions to store choose center intermediate outputs and diagnostics. This parameter is not currently implemented.
+
+XML Label:		**startdate** (default: current date UTC, format: YYYY-MM-DD)
+
+XML Label:		**starttime** (default: current time UTC, format: HH:MM:SS)
+
+- Input: 		Start Date and Time
+- Range: 		Any valid date and time
+- Description:		These date and time parameters indicate the earliest time stamp that a volume of radar data may have in order to be included in the polynomial fit.  This parameter is intended to help the user control which results are used to guide the center finding algorithm for future volumes.  We recommend excluding volumes where the circulation center is near the edge of the radar range.
+
+XML Label:		**enddate** (default: current date UTC + 3 days, format: YYYY-MM-DD)
+
+XML Label:		**endtime** (default: current time UTC, format: HH:MM:SS)
+- Input: 		End Date and Time
+- Range: 		Any valid date and time
+- Description:		These date and time parameters indicate the latest time stamp that a volume of radar data may have in order to be included in the polynomial fit.  This parameter is intended to help the user control which results are used to guide the centering algorithm for future volumes.  We recommend excluding volumes where the circulation center is near the edge of the radar range.
+
+XML Label:		**min_volumes** (default: 6)
+- Input: 		Number of Volumes Required to Begin Curve Fitting
+- Range: 		[3, 100]
+- Description:		This parameter controls the minimum number of volumes that must process successfully before curve fitting begins.  The user can avoid curve fitting by setting this parameter higher than the number of volumes he expects to process.
+
+XML Label:		**wind_weight** (default: 0.20)
+- Input: 		Maximum Wind Score Weight
+
+XML Label:		**stddev_weight** (default: 0.60)
+- Input: 		Standard Deviation Score Weight
+
+XML Label:		**pts_weight** (default: 0.20)
+- Input: 		Number of Converging Centers Score Weight
+- Range: 		[0.0, 1.0]
+- Description:		This set of weights determines the mean centers and the radius of maximum wind on each level of the CAPPI from the centers located by the SIMPLEX algorithm.  The sum of all three of these weights should add to one.  Adjusting these weights allows the user to put greater emphasis on a specific characteristic when determining the location of the circulation center and corresponding radius of maximum wind.  It is recommended that these parameters only be adjusted by the advanced user.
+
+XML Label:		**position_weight** (default: 0.40)
+- Input:		Distance Score Weight
+
+XML Label:		**rmw_weight** (default: 0.40)
+- Input: 		Radius of Maximum Wind Score Weight
+
+XML Label:		**vt_weight** (default: 0.20)
+- Input:		Maximum Velocity Score Weight
+- Range: 		[0.0, 1.0]
+- Description:		This set of weights determines the fitted center and radius of maximum wind on each level of the CAPPI based on information from previously processed volumes.  The sum of all three of these weights should add to one.  A polynomial fit is constructed based no the position, radius of maximum wind, and the maximum wind from all previous volumes included in the fit to determine the best circulation center of those located by simplex.  Adjusting these parameters will effect which characteristics are given a greater emphasis is determining the best center, it is recommended that these parameters only be adjusted by the advanced user.
+
+XML Label:		**stats** (default: 95)
+- Input:		fTest Precision
+- Range: 		{95, 99} %
+- Description:		This parameter determines the statistical significance level required to increase the order of the polynomial curve fits used to constrain the selected centers. The higher significance level results in a stricter requirement, and therefore most likely a lower order fit. It is recommended that this parameter only be adjusted by the advanced user.
+ 
+### VTD
+
+XML Label:		dir (default: 'default')
+- Input: 		VTD Output Directory
+- Range: 		Any directory where the user has read and write permission
+- Description:		This parameter stores the directory where the results of the final GBVTD search will be stored.  These files are intermediates which are only valuable to the advanced user, but if they are discarded the user will be unable to restart the VORTRAC run.  A list of these files are stored in the working directory (file ending in vortexList.xml).  This directory will default to use or create a center subdirectory in the working directory if its value is not altered.
+
+XML Label:		geometry (default: GBVTD)
+- Input: 		Geometry
+- Range: 		[GBVTD, GVTD]
+Description:		This parameter holds the geometry for the VORTRAC analysis.  Currently only the GBVTD geometry is implemented so this parameter should not be changed.  This parameter controls the same functionality as the parameter of the same name in the SIMPLEX Configuration Panel, but is only used in the final calculation of the circulation winds.
+
+XML Label:		closure (default: original_hvvp)
+- Input: 		Closure				
+- Range: 		{original, original_hvvp}
+- Description:		This parameter holds the closure assumption to be used in the VORTRAC analysis.  Selecting the 'original' closure assumption assumes the component of the environmental wind perpendicular to the radar's line of view to the storm is negligible.  Selecting 'original_hvvp' allows VORTRAC to use the HVVP algorithm to calculate this environmental wind component.  This closure assumption is used in the GBVTD final analysis of the selected vorticity center. For more about closure assumptions see Sec. 3A Algorithm Overview. This parameter controls the same functionality as the parameter of the same name in the SIMPLEX CONFIGURATION PANEL, but is only used in the final calculation of the circulation winds. The 'original_hvvp' closure assumption is not available in the simplex search because it increases calculation times considerably.
+
+XML Label:		reflectivity (default: DZ)
+- Input: 		Reflectivity
+- Range: 		[DZ]
+- Description:		This parameter holds the letters that identify the reflectivity data within the radar volumes.  There is currently only one option for this parameter but it may be expanded later to suit user needs.  This parameter controls the same functionality as the parameter of the same name in the SIMPLEX CONFIGURATION PANEL, but is only used in the final calculation of the circulation winds.
+
+XML Label:		velocity (default: VE)
+- Input: 		Velocity
+- Range: 		[VE]
+- Description:		This parameter holds the letters that identify the velocity data within the radar volumes.  There is currently only one option for this parameter but it may be expanded later to suit user needs.  This parameter controls the same functionality as the parameter of the same name in the SIMPLEX CONFIGURATION PANEL, but is only used in the final calculation of the circulation winds.
+
+XML Label:		bottomlevel (default: 1 km)
+- Input: 		Bottom Level (km)
+- Range: 		[1, 5] km
+
+XML Label:		toplevel (default: 3)
+- Input: 		Top Level (km)
+- Range: 		[2, 20] (km)
+- Description:		These two parameters control which height range within the CAPPI is used in the final calculation of the circulation winds.  The user can adjust these parameters, but the total number of levels used cannot exceed 15 due to memory constraints.  Examining a greater number of levels may provide greater accuracy, but at the cost of computation time.  The default values for these parameters should be appropriate for most cases.  The user should also be cautioned that trying to examine levels outside of those contained in the CAPPI and those processed by SIMPLEX could yield undesirable results due to absent data.
+
+XML Label:		innerradius (default: 1)
+- Input: 		Inner Radius (km)
+- Range: 		[1, 100]
+
+XML Label:		outerradius (default: 60)
+- Input: 		Outer Radius (km)
+- Range: 		[2, 150]
+- Description:		These two parameters control the range of radii that are included in the pressure deficit calculation using the final circulation winds.  These parameters should be adjusted to encompass as much of the circulation as possible without exceeding memory limitations (current memory limitations are 150 rings).  These are required parameters, they should also be adjusted if the storm changes size during the analysis.   It is highly recommended that the user leave the inner radius at the 1 km default.  The Outer VTD radius is displayed on the CAPPI DISPLAY once VORTRAC has completely processed a volume.  This visual display should help the user locate the best radius range for analysis of subsequent volumes.	
+
+XML Label:		ringwidth (default: 1.0 km)
+- Input: 		Width of Search Rings (km)	
+- Range: 		[0.01, 10.00] km
+- Description:		This parameter controls the width of the search ring for each radius  analysis preformed in the final calculation of circulation winds.  This parameter does not change the ring spacing (VTD will extract information on circulation winds in 1 km increments between the Inner Radius and the Outer Radius).  This parameter controls the thickness of the annuli of data points from the CAPPI that are used for each search.  It may be useful to increase this value when data in the region of interest is very sparse.  However, increasing this value significantly may cause greater uncertainty in the radius of maximum wind.
+
+XML Label:		maxwavenum (default: 1)
+- Input: 		Maximum Wave Number
+- Range: 		[0, 4]
+
+XML Label:		maxdatagap (default: 0 deg)   
+- Input: 		Wave # 
+- Range: 		[0, 359] deg
+- Description:		These parameters control how much data can be missing within a ring of analysis at each wave number.  The Maximum Wave Number controls the order of the Fourier fit used to calculate the winds at each ring.  The VTD CONFIGURATION Panel will hold multiple Wave # boxes corresponding to the value assigned maxwavenum. The maximum data gap for each wave number should be assigned based on an understanding of how missing data affects the quality of the fit.  The defaults should work well form most cases.  
 
 
 
