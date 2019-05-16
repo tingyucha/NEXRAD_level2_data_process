@@ -53,10 +53,10 @@ XML Label:		**dir** (default: 'default' sets to current working directory at run
 - Range:			Any directory where the user has permission to read and write files
 - Description:		This parameter holds the location of the working directory which will contain many of the products and temporary files that VORTRAC uses during a run.  When other directories in the configuration are left on the default setting they will default to subdirectories of this working directory.  It is recommended that the user not change the working directory once a run has begun processing because this can cause difficulties in locating data products and intermediates.  The working directory is also important when restarting an old run, since VORTRAC will search the working directory for traces of previous runs to restart.
 
-XML Label:		**centers** (optional)
+XML Label:		**centers** (optional, data format: YYYY-MM-DD:HH:MM,lat,lon)
 - Input: 		Center file directory
 - Range:			Any directory where the user has permission to read and write files
-- Description:		This parameter should hold the name of the directory that contains the centers information that VORTRAC can use it as a first guess to perform the simplex algorithm or as a final center to perform the GBVTD/GVTD algorithm. It is optional to include the center file.
+- Description:		This parameter should hold the directory of the csv file that contains the centers information. VORTRAC can use the csv file as a first guess to perform the simplex algorithm or as a final center to perform the GBVTD/GVTD algorithm. It is optional to include the center file, and the center format is `YYYY-MM-DD:HH:MM,lat,lon`.
 
 ### radar
 XML Label:		**name** (default: WSR-88D)
@@ -435,12 +435,13 @@ XML Label:		**endtime** (default: current time, format: HH:MM:SS)
 
 1. Create several folders in the same directory as the xml file:
 - cappi
+- center
 - choosecenter
 - radar
 - pressure
 - vtd
 
-2. Put the radar files in the radar folder
+2. Put the radar files in the radar folder.
 
 3. Edit the xml file and configure the information.
 
