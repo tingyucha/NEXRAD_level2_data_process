@@ -3,6 +3,7 @@
 The Vortex Objective Radar Tracking and Circulation software is a collection of radar algorithms designed to provide real-time or post-analysis information about hurricane location and structure from a single Doppler radar. These algorithms are written in C++ and combined with a graphical user interface (GUI) that allows the user to control the software operation and display critical storm parameters for use in an operational environment. The primary display shows a timeline of estimated central surface pressure and the radius of maximum wind (RMW) that updates as new radar volumes are processed. Additional information about the radar data and program operation is also displayed to the user, including a constant altitude plan-position indicator (CAPPI), maximum velocity, storm signal, status light, operation log, and progress bar. This development was funded under a grant from the NOAA Joint Hurricane Testbed program from 2005 – 2007.
 
 ## Configuration
+Edit the configuration in the XML file. Each section in the XML file is explained by the following:
 
 ### vortex
 XML Label:		**name** (default: New Hurricane) 
@@ -285,77 +286,171 @@ XML Label:		**stats** (default: 95)
  
 ### VTD
 
-XML Label:		dir (default: 'default')
+XML Label:		**dir** (default: 'default')
 - Input: 		VTD Output Directory
 - Range: 		Any directory where the user has read and write permission
 - Description:		This parameter stores the directory where the results of the final GBVTD search will be stored.  These files are intermediates which are only valuable to the advanced user, but if they are discarded the user will be unable to restart the VORTRAC run.  A list of these files are stored in the working directory (file ending in vortexList.xml).  This directory will default to use or create a center subdirectory in the working directory if its value is not altered.
 
-XML Label:		geometry (default: GBVTD)
+XML Label:		**geometry** (default: GBVTD)
 - Input: 		Geometry
 - Range: 		[GBVTD, GVTD]
 Description:		This parameter holds the geometry for the VORTRAC analysis.  Currently only the GBVTD geometry is implemented so this parameter should not be changed.  This parameter controls the same functionality as the parameter of the same name in the SIMPLEX Configuration Panel, but is only used in the final calculation of the circulation winds.
 
-XML Label:		closure (default: original_hvvp)
+XML Label:		**closure** (default: original_hvvp)
 - Input: 		Closure				
 - Range: 		{original, original_hvvp}
 - Description:		This parameter holds the closure assumption to be used in the VORTRAC analysis.  Selecting the 'original' closure assumption assumes the component of the environmental wind perpendicular to the radar's line of view to the storm is negligible.  Selecting 'original_hvvp' allows VORTRAC to use the HVVP algorithm to calculate this environmental wind component.  This closure assumption is used in the GBVTD final analysis of the selected vorticity center. For more about closure assumptions see Sec. 3A Algorithm Overview. This parameter controls the same functionality as the parameter of the same name in the SIMPLEX CONFIGURATION PANEL, but is only used in the final calculation of the circulation winds. The 'original_hvvp' closure assumption is not available in the simplex search because it increases calculation times considerably.
 
-XML Label:		reflectivity (default: DZ)
+XML Label:		**reflectivity** (default: DZ)
 - Input: 		Reflectivity
 - Range: 		[DZ]
 - Description:		This parameter holds the letters that identify the reflectivity data within the radar volumes.  There is currently only one option for this parameter but it may be expanded later to suit user needs.  This parameter controls the same functionality as the parameter of the same name in the SIMPLEX CONFIGURATION PANEL, but is only used in the final calculation of the circulation winds.
 
-XML Label:		velocity (default: VE)
+XML Label:		**velocity** (default: VE)
 - Input: 		Velocity
 - Range: 		[VE]
 - Description:		This parameter holds the letters that identify the velocity data within the radar volumes.  There is currently only one option for this parameter but it may be expanded later to suit user needs.  This parameter controls the same functionality as the parameter of the same name in the SIMPLEX CONFIGURATION PANEL, but is only used in the final calculation of the circulation winds.
 
-XML Label:		bottomlevel (default: 1 km)
+XML Label:		**bottomlevel** (default: 1 km)
 - Input: 		Bottom Level (km)
 - Range: 		[1, 5] km
 
-XML Label:		toplevel (default: 3)
+XML Label:		**toplevel** (default: 3)
 - Input: 		Top Level (km)
 - Range: 		[2, 20] (km)
 - Description:		These two parameters control which height range within the CAPPI is used in the final calculation of the circulation winds.  The user can adjust these parameters, but the total number of levels used cannot exceed 15 due to memory constraints.  Examining a greater number of levels may provide greater accuracy, but at the cost of computation time.  The default values for these parameters should be appropriate for most cases.  The user should also be cautioned that trying to examine levels outside of those contained in the CAPPI and those processed by SIMPLEX could yield undesirable results due to absent data.
 
-XML Label:		innerradius (default: 1)
+XML Label:		**innerradius** (default: 1)
 - Input: 		Inner Radius (km)
 - Range: 		[1, 100]
 
-XML Label:		outerradius (default: 60)
+XML Label:		**outerradius** (default: 60)
 - Input: 		Outer Radius (km)
 - Range: 		[2, 150]
 - Description:		These two parameters control the range of radii that are included in the pressure deficit calculation using the final circulation winds.  These parameters should be adjusted to encompass as much of the circulation as possible without exceeding memory limitations (current memory limitations are 150 rings).  These are required parameters, they should also be adjusted if the storm changes size during the analysis.   It is highly recommended that the user leave the inner radius at the 1 km default.  The Outer VTD radius is displayed on the CAPPI DISPLAY once VORTRAC has completely processed a volume.  This visual display should help the user locate the best radius range for analysis of subsequent volumes.	
 
-XML Label:		ringwidth (default: 1.0 km)
+XML Label:		**ringwidth** (default: 1.0 km)
 - Input: 		Width of Search Rings (km)	
 - Range: 		[0.01, 10.00] km
 - Description:		This parameter controls the width of the search ring for each radius  analysis preformed in the final calculation of circulation winds.  This parameter does not change the ring spacing (VTD will extract information on circulation winds in 1 km increments between the Inner Radius and the Outer Radius).  This parameter controls the thickness of the annuli of data points from the CAPPI that are used for each search.  It may be useful to increase this value when data in the region of interest is very sparse.  However, increasing this value significantly may cause greater uncertainty in the radius of maximum wind.
 
-XML Label:		maxwavenum (default: 1)
+XML Label:		**maxwavenum** (default: 1)
 - Input: 		Maximum Wave Number
 - Range: 		[0, 4]
 
-XML Label:		maxdatagap (default: 0 deg)   
+XML Label:		**maxdatagap** (default: 0 deg)   
 - Input: 		Wave # 
 - Range: 		[0, 359] deg
 - Description:		These parameters control how much data can be missing within a ring of analysis at each wave number.  The Maximum Wave Number controls the order of the Fourier fit used to calculate the winds at each ring.  The VTD CONFIGURATION Panel will hold multiple Wave # boxes corresponding to the value assigned maxwavenum. The maximum data gap for each wave number should be assigned based on an understanding of how missing data affects the quality of the fit.  The defaults should work well form most cases.  
+
+### hvvp
+Currently, HVVP is not used in the VORTRAC analysis, so the user can leave it as default setting.
+
+### pressure
+
+XML Label:		**dir** (default: default)
+- Input: 		Directory Containing Pressure Data
+- Range: 		Any directory where the user has read permissions
+- Description:		This parameter is used to specify the directory that holds files containing the pressure anchor data for the tropical cyclone that is currently being processed.  This directory will be repeatedly checked for any additional pressure data files while the algorithm is running.
+
+XML Label:		**format** (default: AWIPS)
+- Input: 		Data Format
+- Range: 		[AWIPS, Hwind]
+- Description:		This parameter indicates the format of the incoming pressure data that is found in the directory specified by the Directory Containing Pressure Data  parameter. More information about the expected input format is found in Sec. 4B.
+
+XML Label:		**height** (default: 1 km)
+- Input: 		Height at which Pressure Gradient is Calculated (km)
+- Range: 		[1, 20] km
+- Description:		This parameter is used to specify the height that will be used when the pressure deficit is calculated.  The height is measured in km above the radar.  Best results are obtained when examining the lowest level containing viable data.  Usually this is 1 km but in some circumstances the user may want to adjust this parameter.
+
+XML Label:		**maxobstime** (default: 59 min)
+- Input: 		Discard Pressure Observations After (minutes)
+- Range: 		[1, 1000] minutes
+- Description:		This parameter indicates the maximum number of minutes which can elapse between the time a volume is created and time of the external pressure observation used to anchor the VORTRAC pressure calculation.  VORTRAC requires external pressure anchors to accurately calculate the central pressure of the circulation.  The algorithm will use near by pressure observations in conjunction with the pressure gradient of the storm to calculate the central pressure.  The pressure observations used to anchor the calculation of the central pressure for each volume are limited to those which were recorded maxobstime minutes before the volume.
+
+XML Label:		**maxobsdist** (default: 50 km)
+- Input: 		Maximum Distance (km)
+- Range: 		[1, 1000] 
+- Description:		External pressure observations used to anchor the VORTRAC central pressure estimate are also weighted by the distance of the external observation from the tropical storm.  This parameter specifies the maximum distance between a pressure measurement and the tropical cyclone being examined which permits the measurement to be used in the anchoring calculation.  External pressure observations beyond this distance will not be used as part of the anchor pressure calculation.
+
+XML Label:		**maxobsmethod** (default: ring)
+- Input: 		Maximum Distance to Pressure Observations. Measure from TC Center or measure from Edge of Analysis
+- Range: 		[ring, center]
+- Description:		Checking one of the two radio buttons in this box will set the method for deciding which pressure estimates should be used as anchors in the VORTRAC pressure calculation.  If ‘Measure from TC Center’ is down only pressure within the Maximum Distance parameter value of the tropical cyclone center are used to calculate the anchor pressure for the VORTRAC central pressure estimate.  If ‘Measure from Edge of Analysis’ is down then the pressure observations used in this calculation must be less than the Maximum Distance parameter value from the edge of the VORTRAC analysis domain (described in VTD Configuration Panel in the Outer Radius parameter).
+
+XML Label:		**av_interval** (default: 8)
+- Input: 		Number of Volumes Averaged
+- Range: 		[3, 12]
+- Description:		This parameter holds the number of volumes that will be averaged together to determine the rate of change in central pressure for the tropical cyclone.  The Storm Signal on the VORTRAC display will indicate when there has been a significant change in the pressure trend of the storm being analyzed.  In order to avoid signals based on small volume to volume fluctuations several volumes are averaged and compared to radar volumes collected during the previous hour to diagnose the rate of change of storm central pressure.
+
+XML Label:		**rapidlimit** (default: 3)
+- Input: 		Pressure Change for Warnings (mb/hr)
+- Range: 		[1, 10] mb/hr
+- Description:		This value sets the rate of change in the tropical cyclone central pressure that will trigger a change in the Storm Signal on the VORTRAC display.  This parameter is used in conjunction with the Number of Volumes Averaged parameter to determine the thresholds for displaying pressure change warnings.
+
+### graphics
+
+XML Label:		**autolimits** (default: on)
+- Input: 		Parameters for Graph Display (radio button)
+- Range: 		{on, off}
+- Description:		This box of items is used to manually adjust the scale and parameters of the radius of maximum wind (RMW) and pressure display in the GUI.  The Pressure/RMW Display is set to automatically adjust the scales to include the results from every successfully processed volume.  Should the user want to adjust these parameters, the xml autolimits parameter can be turned off (by checking the Parameters for Graph Display box), making available a number of adjustment parameters.
+
+XML Label:		**pressmin** (default: 900.00 mb)
+- Input: 		Minimum Pressure (mb). Only available when “Parameters for Graph Display” is checked
+- Range: 		[0, 1000] mb
+- Description:		This value is the user defined minimum pressure measurement that will be displayed on the Pressure/RMW Display.  Any pressure measurements below this value will not be displayed on the graph.
+
+XML Label:		**pressmax** (default: 1020 mb)
+- Input: 		Maximum Pressure (mb). Only available when “Parameters for Graph Display” is checked
+- Range: 		[700, 1100] mb
+- Description:		This value is the user defined maximum pressure measurement that will be displayed on the Pressure/RMW Display.  Any pressure measurements above this value will not be displayed on the graph.
+
+XML Label:		**rmwmin** (default: 0 km)
+- Input: 		Minimum RMW (km). Only available when “Parameters for Graph Display” is checked
+- Range: 		[0, 200]
+- Description:		This value is the user defined minimum radius of maximum wind (RMW) measurement that will be displayed on the Pressure/RMW Display.  Any RMW measurements above this value will not be displayed on the graph.
+
+XML Label:		**rmwmax** (default: 60 km)
+- Input: 		Maximum RMW (km). Only available when “Parameters for Graph Display” is checked
+- Range: 		[0, 200]
+- Description:		This value is the user defined maximum radius of maximum wind (RMW) measurement that will be displayed on the Pressure/RMW Display.  Any RMW measurements above this value will not be displayed on the graph.
+
+XML Label:		**startdate** (default: current date UTC, format: YYYY-MM-DD)
+
+XML Label:		**starttime** (default: current time UTC, format: HH:MM:SS)
+- Input: 		First Graph Display Time. Only available when “Parameters for Graph Display” is checked
+- Range: 		Any valid date and time
+- Description:		This is the user defined minimum time for pressure and RMW measurements that will be displayed on the Pressure/RMW Display.  This value should be within the period of currently processed radar data.
+
+XML Label:		**enddate** (default: current date UTC + 3 days, format: YYYY-MM-DD)
+
+XML Label:		**endtime** (default: current time, format: HH:MM:SS)
+- Input: 		Final Graph Display Time. Only available when “Parameters for Graph Display” is checked
+- Range: 		Any valid date and time
+- Description:		This time is the user defined maximum time for pressure and RMW measurements that will be displayed on the Pressure/RMW Display.  This value should be within the period of currently processed radar data
 
 
 
 ## Running VORTRAC
 
-1. Edit the xml file and configure the information.
+1. Create several folders in the same directory as the xml file:
+- cappi
+- choosecenter
+- radar
+- pressure
+- vtd
 
+2. Put the radar files in the radar folder
 
-2. To initiate a new run, execute VORTRAC using the following command:
+3. Edit the xml file and configure the information.
+
+4. To initiate a new run, execute VORTRAC using the following command:
 ```terminal
 \path\to\vortrac
 ```
 Click "File", and open the configured xml file. Then, the user can initiate the analysis with the "Run" button on the bottom right.
 
-3. After VORTRAC finishes all the analysis, the program will generate four files: \\
+5. After VORTRAC finishes all the analysis, the program will generate four files: \\
 
 - `TC_name`_`Radar_name`_`Year_of_the_TC`_coefficientlist.csv
 - `TC_name`_`Radar_name`_`Year_of_the_TC`_simplexlist.xml
@@ -364,7 +459,7 @@ Click "File", and open the configured xml file. Then, the user can initiate the 
 
 `TC_name`, `Radar_name`, and `Year_of_the_TC` will be generated based on the configured xml file, and `The_time_of_analysis` depends on the time when the user initiates a new run.
 
-4. Convert the retrieved coefficients into a netCDF file with the coefficintlist and log files by using the following command:
+6. Convert the retrieved coefficients into a netCDF file with the coefficintlist and log files by using the following command:
 ```terminal
 \path\to\vo2nc -c `TC_name`_`Radar_name`_`Year_of_the_TC`_coefficientlist.csv -l VORTRAC_status_`The_time_of_analysis`.log
  -o output.nc
