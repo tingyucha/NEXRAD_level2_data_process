@@ -32,22 +32,25 @@ XML Label:		**direction** (default: 0 deg)
 
 XML Label:		**speed** (default: 0 m/s)
 
-Input: 		Speed of Vortex Movement (Degrees clockwise from North)
-Range: 		[0, 100] m/s
-Description:		These parameters should hold the direction and speed of the initial storm movement.  These measurements should correspond with the time set in “Time of Above Observation” so that VORTRAC can accurately follow the tropical cyclone.  While these parameters are not required for a successful run, it is highly recommended that the user obtain this information about the storm.  These parameters are particularly useful when the initial observation (observation time, latitude and longitude on the VORTEX panel) is outside of the range of the Doppler radar.  When the initial observation is outside Doppler range VORTRAC will linearly interpolate the initial position based on direction of storm movement and storm speed until the circulation enters the Doppler range of the radar.
+- Input: 		Speed of Vortex Movement (Degrees clockwise from North)
+- Range: 		[0, 100] m/s
+- Description:		These parameters should hold the direction and speed of the initial storm movement.  These measurements should correspond with the time set in “Time of Above Observation” so that VORTRAC can accurately follow the tropical cyclone.  While these parameters are not required for a successful run, it is highly recommended that the user obtain this information about the storm.  These parameters are particularly useful when the initial observation (observation time, latitude and longitude on the VORTEX panel) is outside of the range of the Doppler radar.  When the initial observation is outside Doppler range VORTRAC will linearly interpolate the initial position based on direction of storm movement and storm speed until the circulation enters the Doppler range of the radar.
 
-XML Label:		obsdate (default: current date UTC)
-Input: 		Time of Above Observation
-Range: 		Any Valid Date (format: YYYY-MM-DD)
-XML Label:		obstime (default: current time UTC)
-Input: 		Time of Above Observation
-Range: 		Any Valid UTC Time (format: HH:MM:SS)
-Description:		These parameters are used to set the time of the initial observation which is described by Vortex Latitude, Vortex Longitude, Vortex Speed and Vortex Direction parameters contained in this panel.  If this time of observation occurs before the starting time in RADAR CONFIGURATION PANEL, then VORTRAC will attempt to interpolate a starting location that is in the Doppler domain after the indicated initial time in the RADAR CONFIGURATION PANEL. 
+XML Label:		**obsdate** (default: current date UTC)
 
-XML Label:		dir (default: 'default' sets to current working directory at run time)
-Input: 		Working Directory
-Range:			Any directory where the user has permission to read and write files
-Description:		This parameter holds the location of the working directory which will contain many of the products and temporary files that VORTRAC uses during a run.  When other directories in the configuration are left on the default setting they will default to subdirectories of this working directory.  It is recommended that the user not change the working directory once a run has begun processing because this can cause difficulties in locating data products and intermediates.  The working directory is also important when restarting an old run, since VORTRAC will search the working directory for traces of previous runs to restart.
+- Input: 		Time of Above Observation
+- Range: 		Any Valid Date (format: YYYY-MM-DD)
+
+XML Label:		**obstime** (default: current time UTC)
+
+- Input: 		Time of Above Observation
+- Range: 		Any Valid UTC Time (format: HH:MM:SS)
+- Description:		These parameters are used to set the time of the initial observation which is described by Vortex Latitude, Vortex Longitude, Vortex Speed and Vortex Direction parameters contained in this panel.  If this time of observation occurs before the starting time in RADAR CONFIGURATION PANEL, then VORTRAC will attempt to interpolate a starting location that is in the Doppler domain after the indicated initial time in the RADAR CONFIGURATION PANEL. 
+
+XML Label:		**dir** (default: 'default' sets to current working directory at run time)
+- Input: 		Working Directory
+- Range:			Any directory where the user has permission to read and write files
+- Description:		This parameter holds the location of the working directory which will contain many of the products and temporary files that VORTRAC uses during a run.  When other directories in the configuration are left on the default setting they will default to subdirectories of this working directory.  It is recommended that the user not change the working directory once a run has begun processing because this can cause difficulties in locating data products and intermediates.  The working directory is also important when restarting an old run, since VORTRAC will search the working directory for traces of previous runs to restart.
 
 
 
