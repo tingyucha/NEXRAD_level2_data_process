@@ -52,6 +52,53 @@ XML Label:		**dir** (default: 'default' sets to current working directory at run
 - Range:			Any directory where the user has permission to read and write files
 - Description:		This parameter holds the location of the working directory which will contain many of the products and temporary files that VORTRAC uses during a run.  When other directories in the configuration are left on the default setting they will default to subdirectories of this working directory.  It is recommended that the user not change the working directory once a run has begun processing because this can cause difficulties in locating data products and intermediates.  The working directory is also important when restarting an old run, since VORTRAC will search the working directory for traces of previous runs to restart.
 
+### radar
+XML Label:		**name** (default: WSR-88D)
+- Input: 		Radar Name
+- Range: 		Any four letters (preferably radar call letters)
+- Description:		This parameter is intended to hold the radar call letters for WRS-88D radar that is being used to observe the storm.  The drop down box in the RADAR CONFIGURATION PANEL can be used to select from several existing radars near the Atlantic and Gulf coasts.  Additionally the user may choose to add new radars to this list by clicking 'Other Radar ...' and entering or editing parameters as necessary.  The radar call letters entered here are used for identifying radar volume data, in addition to internal labeling and naming data products, so entering these correctly is highly recommended.  
+
+XML Label:		**lat** (default: 0 deg)
+- Input: 		Radar Latitude (deg)
+- Range: 		[-90, 90] decimal degrees
+
+XML Label:		**lon** (default: 0 deg)
+- Input: 		Radar Longitude (deg)
+- Range: 		[-180, 180] decimal degrees
+
+XML Label:		**alt** (default: 0 m)
+- Panel Label: 		Radar Altitude (meters)
+- Range: 		[-999, 999] m
+- Description:		These three parameters describe the location of the radar in latitude, longitude and altitude.  They will be automatically set when a radar is selected from the radar name drop box.  These can be manually adjusted in the panel or in the radar list dialog which can be accessed by choosing 'Other Radar ...' in the Radar Name drop box.  These three parameters are all required to successfully run VORTRAC.
+
+XML Label:		dir (default: 'default')
+- Input: 		Radar Data Directory
+- Range: 		Any existing directory where the user has read permissions
+- Description:		This parameter should hold the name of the directory that contains the level II radar data from the radar specified in this panel.  The level II data in this directory should be the same format as that selected in the format drop box on this panel.  Additionally, the level II data should be named in the following format: `KXXXyyyyMMdd_hhmmss`
+
+where KXXX is the station call letters specified in the radar name parameter.  The call letters are followed by the UTC time stamp of the volume in above format.  This parameter will default to the working directory if no other directory is given.
+
+XML Label:		**format** (default: LEVELII)
+- Input: 		Data Format
+- Range: 		[LDMLEVELII, NCDCLEVELII,NETCDF]
+- Description:		This parameter is used to select the radar data format of the files contained in the directory specified in dir.  These formats are explained in greater detail in Sec 1A.  This is a required parameter, selecting a format that doesn't correspond with the files located in the Radar Data Directory will cause VORTRAC to run improperly.
+
+XML Label:		**startdate** (default: current date UTC, format: YYYY-MM-DD)
+
+XML Label:		**starttime** (default: current time UTC, format: HH:MM:SS)
+
+- Input: 		Start Date and Time
+- Range: 		Any valid date and time
+- Description:		These date and time parameters indicate the earliest time stamp that a volume of level II radar data may have in order to be processed by VORTRAC.  This parameter is intended to help the user control which volumes are read in by VORTRAC for each analysis.
+
+XML Label:		**enddate** (default: current date UTC + 3 days, format: YYYY-MM-DD)
+
+XML Label:		**endtime** (default: current time UTC, format: HH:MM:SS)
+- Panel Label: 		End Date and Time
+- Range: 		Any valid date and time
+- Description:		These date and time parameters indicate the latest time stamp that a volume of level II radar data may have in order to be processed by VORTRAC.  This parameter is intended to help the user control which volumes are read in by VORTRAC for each analysis.
+
+
 
 
 
