@@ -462,7 +462,7 @@ Click "File", and open the configured xml file. Then, the user can initiate the 
 
 6. Convert the retrieved coefficients into a netCDF file with the coefficintlist and log files by using the following command:
 ```terminal
-\path\to\vo2nc -c `TC_name`_`Radar_name`_`Year_of_the_TC`_coefficientlist.csv -l VORTRAC_status_**The_time_of_analysis**.log
+\path\to\vo2nc -c `TC_name`_`Radar_name`_`Year_of_the_TC`_coefficientlist.csv -l VORTRAC_status_{The_time_of_analysis}.log
  -o output.nc
  ```
  
