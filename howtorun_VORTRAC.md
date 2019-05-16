@@ -4,7 +4,7 @@ The Vortex Objective Radar Tracking and Circulation software is a collection of 
 
 ## Configuration
 
-### vortex
+### <vortex>
 XML Label:		**name** (default: New Hurricane) 
 
 - Input: 		Vortex Name 
