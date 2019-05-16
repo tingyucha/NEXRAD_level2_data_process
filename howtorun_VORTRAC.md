@@ -7,13 +7,16 @@ The Vortex Objective Radar Tracking and Circulation software is a collection of 
 ### vortex
 XML Label:		**name** (default: New Hurricane) 
 
-Input: 		Vortex Name 
+- Input: 		Vortex Name 
 
-Description:		This parameter holds the name of the tropical cyclone that VORTRAC is tracking.  This parameter is used internally for labeling and also for labeling various output files.  
+- Description:		This parameter holds the name of the tropical cyclone that VORTRAC is tracking.  This parameter is used internally for labeling and also for labeling various output files.  
 
-XML Label:		lat (default: 0 deg) 
-Input: 		Vortex Latitude
-Range: 		[-90, 90] deg
+XML Label:		**lat** (default: 0 deg) 
+
+- Input: 		Vortex Latitude
+
+- Range: 		[-90, 90] deg
+
 XML Label:		lon (default: 0 deg) 
 Input: 		Vortex Longitude
 Range: 		[-180, 180] deg
