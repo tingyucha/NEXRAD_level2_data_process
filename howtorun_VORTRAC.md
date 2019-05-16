@@ -17,15 +17,21 @@ XML Label:		**lat** (default: 0 deg)
 
 - Range: 		[-90, 90] deg
 
-XML Label:		lon (default: 0 deg) 
-Input: 		Vortex Longitude
-Range: 		[-180, 180] deg
-Description:		These parameters hold the first observation latitude and longitude of the tropical cyclone.  The latitude and longitude of the storm given here should correspond with the time shown in “Time of Above Observation” so that VORTRAC can accurately locate the tropical cyclone.  VORTRAC accepts latitude (longitude) in a decimal format where a negative value is in the Northern (Western) hemisphere and a positive value is in the Southern (Eastern) hemisphere.  Initializing the VORTRAC analysis with an accurate storm location and time is required for a successful run and the accuracy of these parameters affects VORTRAC's ability to follow the storm as it evolves. 
+XML Label:		**lon** (default: 0 deg) 
 
-XML Label:		direction (default: 0 deg)
-Input: 		Direction of Vortex Movement (Degrees clockwise from North)
-Range: 		[0, 359.9] deg
-XML Label:		speed (default: 0 m/s)
+- Input: 		Vortex Longitude
+
+- Range: 		[-180, 180] deg
+
+- Description:		These parameters hold the first observation latitude and longitude of the tropical cyclone.  The latitude and longitude of the storm given here should correspond with the time shown in “Time of Above Observation” so that VORTRAC can accurately locate the tropical cyclone.  VORTRAC accepts latitude (longitude) in a decimal format where a negative value is in the Northern (Western) hemisphere and a positive value is in the Southern (Eastern) hemisphere.  Initializing the VORTRAC analysis with an accurate storm location and time is required for a successful run and the accuracy of these parameters affects VORTRAC's ability to follow the storm as it evolves. 
+
+XML Label:		**direction** (default: 0 deg)
+
+- Input: 		Direction of Vortex Movement (Degrees clockwise from North)
+- Range: 		[0, 359.9] deg
+
+XML Label:		**speed** (default: 0 m/s)
+
 Input: 		Speed of Vortex Movement (Degrees clockwise from North)
 Range: 		[0, 100] m/s
 Description:		These parameters should hold the direction and speed of the initial storm movement.  These measurements should correspond with the time set in “Time of Above Observation” so that VORTRAC can accurately follow the tropical cyclone.  While these parameters are not required for a successful run, it is highly recommended that the user obtain this information about the storm.  These parameters are particularly useful when the initial observation (observation time, latitude and longitude on the VORTEX panel) is outside of the range of the Doppler radar.  When the initial observation is outside Doppler range VORTRAC will linearly interpolate the initial position based on direction of storm movement and storm speed until the circulation enters the Doppler range of the radar.
