@@ -6,11 +6,12 @@
         <level2url>http://motherlode.ucar.edu/</level2url> 
         <level3url>http://motherlode.ucar.edu/</level3url>
         <atcfurl>ftp://ftp.nhc.noaa.gov/</atcfurl>
-	    <!--The above sections are designed for real-time-->
+	    <!--Line 4-8 are designed for real-time mode-->
         <name>MICHAEL</name>
         <lat>28.4</lat>
         <lon>-86.45</lon>
-        <direction>12.53</direction>
+	    <!--Direction is in degree relative to the North, speed is in m/s-->
+        <direction>12.53</direction> 
         <speed>9.46</speed>
         <rmw>25</rmw>
         <obsdate>2018-10-10</obsdate>
