@@ -3,9 +3,10 @@
     <vortex>
         <id>14L</id>
         <mode>manual</mode>
-        <level2url>http://motherlode.ucar.edu/</level2url>
+        <level2url>http://motherlode.ucar.edu/</level2url> 
         <level3url>http://motherlode.ucar.edu/</level3url>
         <atcfurl>ftp://ftp.nhc.noaa.gov/</atcfurl>
+	    <!--The above sections are designed for real-time-->
         <name>MICHAEL</name>
         <lat>28.4</lat>
         <lon>-86.45</lon>
