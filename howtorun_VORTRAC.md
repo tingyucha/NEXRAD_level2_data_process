@@ -218,7 +218,7 @@ XML Label:		**boxdiameter** (default: 12.0 km)
 - Input: 		Width of Search Zone (km)
 - Range: 		[9, 25]
 
-XML Label:		**numpoints** (default: 16)
+XML Label:		**numpoints** (default: 16, recommended the number can be a square of an integer)
 - Input: 		Number of Center Points
 - Range: 		[1, 25]
 - Description:		These two parameters control the distribution of initial SIMPLEX searches that are independently run to locate the circulation center.  The Width of Search Zone parameter controls the width of the initial range where SIMPLEX searches are started.  The Number of Center Points parameter controls the number of starting points distributed within this box.  It is recommended that these parameters only be changed by advanced users, the defaults should perform well for most cases.
