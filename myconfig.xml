@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<vortrac xmnls="http://www.eol.ucar.edu/ns/vortrac">
+    <vortex>
+        <id>14L</id>
+        <mode>manual</mode>
+        <level2url>http://motherlode.ucar.edu/</level2url>
+        <level3url>http://motherlode.ucar.edu/</level3url>
+        <atcfurl>ftp://ftp.nhc.noaa.gov/</atcfurl>
+        <name>MICHAEL</name>
+        <lat>28.4</lat>
+        <lon>-86.45</lon>
+        <direction>12.53</direction>
+        <speed>9.46</speed>
+        <rmw>25</rmw>
+        <obsdate>2018-10-10</obsdate>
+        <obstime>08:00:00</obstime>
+        <dir>/bell-scratch/tcha/vortrac/Michael</dir>
+        <centers>/bell-scratch/tcha/vortrac/Michael/Center.csv</centers>
+    </vortex>
+    <radar>
+        <name>KEVX</name>
+        <lat>30.564</lat>
+        <lon>-85.921</lon>
+        <alt>62.7</alt>
+        <dir>/bell-scratch/tcha/vortrac/Michael/radar</dir>
+        <format>NETCDF</format>
+        <pre_gridded>true</pre_gridded>
+        <max_unambig_range>300.0</max_unambig_range>
+        <startdate>2018-10-10</startdate>
+        <enddate>2018-10-10</enddate>
+        <starttime>08:00:00</starttime>
+        <endtime>19:30:00</endtime>
+    </radar>
+    <cappi>
+        <dir>/bell-scratch/tcha/vortrac/Michael/cappi</dir>
+        <xdim>801.0</xdim>
+        <ydim>801.0</ydim>
+        <zdim>40.0</zdim>
+        <xgridsp>1.0</xgridsp>
+        <ygridsp>1.0</ygridsp>
+        <zgridsp>0.5</zgridsp>
+        <zmin>0.5</zmin>
+        <velocity>VU</velocity>
+        <interpolation>cressman</interpolation>
+        <cappi_display_level>7</cappi_display_level>
+    </cappi>
+    <center>
+        <dir>/bell-scratch/tcha/vortrac/Michael/center</dir>
+	<skipsimplex>true</skipsimplex>
+        <geometry>GVTD</geometry>
+        <closure>original</closure>
+        <reflectivity>DZ</reflectivity>
+        <velocity>VU</velocity>
+        <bottomlevel>0.5</bottomlevel>
+        <toplevel>10</toplevel>
+        <innerradius>10</innerradius>
+        <outerradius>50</outerradius>
+        <ringwidth>1.0</ringwidth>
+        <search>MAXVT0</search>
+        <influenceradius>4.0</influenceradius>
+        <convergence>0.05</convergence>
+        <maxiterations>60</maxiterations>
+        <boxdiameter>12.0</boxdiameter>
+        <numpoints>20</numpoints>
+        <maxwavenumber>6</maxwavenumber>
+        <maxdatagap wavenum="0">180</maxdatagap>
+        <maxdatagap wavenum="1">120</maxdatagap>
+        <maxdatagap wavenum="2">90</maxdatagap>
+        <maxdatagap wavenum="3">45</maxdatagap>
+        <maxdatagap wavenum="4">30</maxdatagap>
+	<maxdatagap wavenum="5">18</maxdatagap>
+	<maxdatagap wavenum="6">15</maxdatagap>
+    </center>
+    <choosecenter>
+        <dir>/bell-scratch/tcha/vortrac/Michael/choosecenter</dir>
+        <startdate>2018-10-10</startdate>
+        <enddate>2018-10-10</enddate>
+        <starttime>08:00:00</starttime>
+        <endtime>19:30:00</endtime>
+        <min_volumes>6</min_volumes>
+        <wind_weight>0.20</wind_weight>
+        <stddev_weight>0.60</stddev_weight>
+        <pts_weight>0.20</pts_weight>
+        <position_weight>0.40</position_weight>
+        <rmw_weight>0.40</rmw_weight>
+        <vt_weight>0.20</vt_weight>
+        <stats>95</stats>
+    </choosecenter>
+    <vtd>
+        <dir>/bell-scratch/tcha/vortrac/Michael/vtd</dir>
+        <geometry>GVTD</geometry>
+        <closure>original_hvvp</closure>
+        <reflectivity>DZ</reflectivity>
+        <velocity>VU</velocity>
+        <bottomlevel>0.5</bottomlevel>
+        <toplevel>10</toplevel>
+        <innerradius>1</innerradius>
+        <outerradius>125</outerradius>
+        <ringwidth>1.0</ringwidth>
+        <maxwavenumber>6</maxwavenumber>
+        <maxdatagap wavenum="0">180</maxdatagap>
+        <maxdatagap wavenum="1">120</maxdatagap>
+        <maxdatagap wavenum="2">90</maxdatagap>
+        <maxdatagap wavenum="3">45</maxdatagap>
+        <maxdatagap wavenum="4">30</maxdatagap>
+	<maxdatagap wavenum="5">18</maxdatagap>
+	<maxdatagap wavenum="6">15</maxdatagap>
+    </vtd>
+    <hvvp>
+        <levels>10</levels>
+        <hgt_start>0.5</hgt_start>
+        <hinc>0.1</hinc>
+        <xt>2</xt>
+    </hvvp>
+    <pressure>
+        <dir>/bell-scratch/tcha/vortrac/Michael/pressure</dir>
+        <format>MADIS</format>
+        <height>1</height>
+        <maxobstime>59</maxobstime>
+        <maxobsdist>50</maxobsdist>
+        <maxobsmethod>ring</maxobsmethod>
+        <av_interval>8</av_interval>
+        <rapidlimit>3</rapidlimit>
+        <madisurl>https://madis-data.noaa.gov/</madisurl>
+        <madisuser>nps11_madis_research</madisuser>
+        <madispassword>3q7GEYuLJFZKBcgVLf</madispassword>
+        <gradient_height>4</gradient_height>
+    </pressure>
+    <graphics>
+        <display_type>pressure</display_type>
+        <autolimits>on</autolimits>
+        <pressmin>900.0</pressmin>
+        <pressmax>1020.0</pressmax>
+        <rmwmin>0.0</rmwmin>
+        <rmwmax>60.0</rmwmax>
+        <defmax>0</defmax>
+        <defmin>-50</defmin>
+        <startdate/>
+        <enddate/>
+        <starttime/>
+        <endtime/>
+    </graphics>
+    <qc>
+        <wind_method>gvad</wind_method>
+        <vel_min>1.5</vel_min>
+        <vel_max>100</vel_max>
+        <ref_max>65</ref_max>
+        <ref_min>-15</ref_min>
+        <sw_threshold>12.0</sw_threshold>
+        <bbcount>30</bbcount>
+        <maxfold>4</maxfold>
+        <windspeed>0</windspeed>
+        <winddirection>0</winddirection>
+        <vadlevels>15</vadlevels>
+        <numcoeff>15</numcoeff>
+        <vadthr>30</vadthr>
+        <gvadthr>180</gvadthr>
+    </qc>
+</vortrac>
