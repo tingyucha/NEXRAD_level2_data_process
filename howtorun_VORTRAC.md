@@ -224,7 +224,7 @@ XML Label:		**numpoints** (default: 16, recommended the number can be a square o
 - Description:		These two parameters control the distribution of initial SIMPLEX searches that are independently run to locate the circulation center.  The Width of Search Zone parameter controls the width of the initial range where SIMPLEX searches are started.  The Number of Center Points parameter controls the number of starting points distributed within this box.  It is recommended that these parameters only be changed by advanced users, the defaults should perform well for most cases.
 
 XML Label:		**maxwavenum** (default: 1)
-- Input: 		Maximum Wave Number
+- Input: 		Maximum Wave Number of TC
 - Range: 		[0, no maximum limit]
 
 XML Label:		**maxdatagap** (default: 0 deg)   
@@ -336,8 +336,8 @@ XML Label:		**ringwidth** (default: 1.0 km)
 - Description:		This parameter controls the width of the search ring for each radius  analysis preformed in the final calculation of circulation winds.  This parameter does not change the ring spacing (VTD will extract information on circulation winds in 1 km increments between the Inner Radius and the Outer Radius).  This parameter controls the thickness of the annuli of data points from the CAPPI that are used for each search.  It may be useful to increase this value when data in the region of interest is very sparse.  However, increasing this value significantly may cause greater uncertainty in the radius of maximum wind.
 
 XML Label:		**maxwavenum** (default: 1)
-- Input: 		Maximum Wave Number
-- Range: 		[0, 4]
+- Input: 		Maximum Wave Number of TC
+- Range: 		[0, no maximum limit]
 
 XML Label:		**maxdatagap** (default: 0 deg)   
 - Input: 		Wave # 
