@@ -217,6 +217,7 @@ XML Label:		**maxiterations** (default: 60)
 XML Label:		**boxdiameter** (default: 12.0 km)
 - Input: 		Width of Search Zone (km)
 - Range: 		[9, 25]
+
 XML Label:		**numpoints** (default: 16)
 - Input: 		Number of Center Points
 - Range: 		[1, 25]
