@@ -114,24 +114,24 @@ XML Label:		**dir** (default: default)
 
 XML Label:		**xdim** (default: 150)
 - Input: 		Grid Dimension in X Direction 
-- Range: 		[0, 256]
+- Range: 		[0, no maximum limit]
 
 XML Label:		**ydim** (default: 150)
 - Input: 		Grid Dimension in Y Direction
-- Range: 		[0, 256]
+- Range: 		[0, no maximum limit]
 
 XML Label:		**zdim** (default: 3)
 - Input: 		Grid Dimension in Z Direction
-- Range: 		[0, 20]
+- Range: 		[0, no maximum limit]
 - Description:		These three parameters allow the user to adjust the size of the CAPPI used in the analysis.  The default dimensions are intended to meet the needs of the 'average' circulation, but these parameters can be adjusted to meet specific needs.  Larger grids provide more data for analysis, but they also increase processing times considerably.
 
 XML Label:		**xgridsp** (default: 1.0 km)
 - Input: 		X Grid Spacing (km)
 
-XML Label:		**ygridsp** (default: 1.0)
+XML Label:		**ygridsp** (default: 1.0 km)
 - Input: 		Y Grid Spacing (km)
 
-XML Label:		**zgridsp** (default: 1.0)
+XML Label:		**zgridsp** (default: 1.0 km)
 - Input: 		Z Grid Spacing (km)
 - Description:		These values control the grid spacing of the CAPPI.  Currently these value are fixed at 1 km, but VORTRAC's functionality may be expanded later to allow adjustments in these parameters.
 
@@ -174,7 +174,7 @@ XML Label:		**velocity** (default: VE)
 
 XML Label:		**bottomlevel** (default: 1 km)
 - Input: 		Bottom Level (km)
-- Range: 		[1, 5] km
+- Range: 		[0, 5] km
 
 XML Label:		**toplevel** (default: 3)
 - Input: 		Top Level (km)
@@ -299,7 +299,7 @@ Description:		This parameter holds the geometry for the VORTRAC analysis.  Curre
 
 XML Label:		**closure** (default: original_hvvp)
 - Input: 		Closure				
-- Range: 		{original, original_hvvp}
+- Range: 		[original, original_hvvp]
 - Description:		This parameter holds the closure assumption to be used in the VORTRAC analysis.  Selecting the 'original' closure assumption assumes the component of the environmental wind perpendicular to the radar's line of view to the storm is negligible.  Selecting 'original_hvvp' allows VORTRAC to use the HVVP algorithm to calculate this environmental wind component.  This closure assumption is used in the GBVTD final analysis of the selected vorticity center. For more about closure assumptions see Sec. 3A Algorithm Overview. This parameter controls the same functionality as the parameter of the same name in the SIMPLEX CONFIGURATION PANEL, but is only used in the final calculation of the circulation winds. The 'original_hvvp' closure assumption is not available in the simplex search because it increases calculation times considerably.
 
 XML Label:		**reflectivity** (default: DZ)
@@ -314,7 +314,7 @@ XML Label:		**velocity** (default: VE)
 
 XML Label:		**bottomlevel** (default: 1 km)
 - Input: 		Bottom Level (km)
-- Range: 		[1, 5] km
+- Range: 		[0, 5] km
 
 XML Label:		**toplevel** (default: 3)
 - Input: 		Top Level (km)
