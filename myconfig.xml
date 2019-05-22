@@ -63,7 +63,7 @@
         <convergence>0.05</convergence>
         <maxiterations>60</maxiterations>
         <boxdiameter>12.0</boxdiameter>
-        <numpoints>20</numpoints>
+        <numpoints>16</numpoints>
         <maxwavenumber>6</maxwavenumber>
         <maxdatagap wavenum="0">180</maxdatagap>
         <maxdatagap wavenum="1">120</maxdatagap>
