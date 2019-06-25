@@ -443,7 +443,8 @@ XML Label:		**endtime** (default: current time, format: HH:MM:SS)
 - vtd
 
 2. Put the radar files in the radar folder. 
-**If you select to use NetCDF pregridded data, make sure to convert the raw file format to CfRadial using RadxConvert then grid the data on Cartesian coordinate using Radx2Grid.
+
+**If you select to use NetCDF pregridded data, make sure to convert the raw file format to CfRadial using RadxConvert then grid the data on Cartesian coordinate using Radx2Grid.**
 
 3. Edit the xml file and configure the information.
 
